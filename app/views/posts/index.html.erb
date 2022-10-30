@@ -1,0 +1,20 @@
+<%= render "shared/nav" %>
+
+<div class="posts-container">
+  <ul class="p-0 pt-4">
+    <% @posts.each do |post|%>
+      <li class="post-card border border-black list-unstyled mb-4 p-2">
+        <h1><%= post.title %></h1>
+        <p><%= post.text %></p>
+          <% if post.comments_counter == nil %>
+          <% post.comments_counter = 0 %>
+          <% end %>
+        <p>Comments: <%= post.comments_counter %></p>
+          <% if post.likes_counter == nil %>
+          <% post.likes_counter = 0 %>
+          <% end %>
+        <p>Likes: <%= post.likes_counter %></p>
+      </li>
+    <% end %>
+  </ul>
+</div>
