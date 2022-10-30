@@ -1,0 +1,21 @@
+<%= render "shared/nav" %>
+
+<div class="users-container">
+  <ul class="p-0 pt-4">
+    <% @users.each do |user|%>
+      <li class="post-card d-flex justify-content-between align-center border border-black list-unstyled mb-4 p-4 bg-white">
+        <div class="profile-pic d-flex flex-column justify-content-start mr-4">
+          <img src=<%= user.photo %> alt="profile-picture" class="rounded" style="width: 150px; heigth: auto"/>
+        </div>
+        <div class="user-data d-flex flex-column justify-content-between" style="width: 50%;">
+          <h1 class="m-0 text-danger"><%= user.name %></h1>
+          <p class="m-0"><%= user.bio %></p>
+            <% if user.posts_counter == nil %>
+            <% user.posts_counter = 0 %>
+            <% end %>
+          <h4 class="m-0">Posts: <%= user.posts_counter %></h4>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
