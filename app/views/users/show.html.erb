@@ -1,8 +1,8 @@
 <%= render "shared/nav" %>
 
-<div class="user-container">
+<div class="user-container" style="margin-top:4em;">
   <div 
-    class="header d-flex justify-content-between p-4 border m-2 border rounded bg-white" 
+    class="header d-flex justify-content-between p-4 m-2 border rounded bg-white" 
     style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
   >
     <div class="profile-pic d-flex flex-column justify-content-start mr-4">
@@ -16,11 +16,35 @@
       <h1 class="display-2 m-0">Posts: <%= @user.posts_counter %></h1>
     </div>
   </div>
-  <%
-=begin%>
- <% @user.posts.each do |post| %>
-    <h2><%= post.title %></h2>
-  <% end %> 
-<%
-=end%>
+  <div 
+    class="bio p-4 m-2 border rounded bg-white"
+    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+  >
+    <h1 style="font-weight: bold;">About</h1>
+    <p><%= @user.bio %></p>
+  </div>
+  <div class="p-4 m-2 border rounded bg-white" style="min-height: 30vh;">
+    <h1 class="mb-4" style="font-weight: bold;">Recent posts</h1>
+    <% @user.most_recent_posts.each do |post| %>
+      <div 
+        class="p-4 border border-2 border-danger rounded mb-2"
+        style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+      >
+        <p class="m-0" style="font-weight: bold;"><%= post.title %></p>
+        <div class="d-flex justify-content-end">
+            <% if post.comments_counter == nil %>
+               <% post.comments_counter = 0 %>
+            <% end %>
+          <p class="px-2 m-0">Comments: <%= post.comments_counter %></p>
+            <% if post.likes_counter == nil %>
+               <% post.likes_counter = 0 %>
+            <% end %>
+          <p class="px-2 m-0">Likes: <%= post.likes_counter %></p>
+        </div>
+      </div>
+    <% end %> 
+  </div>
+  <div class="d-flex justify-content-center">
+  <button type="button" class="btn btn-danger mb-3" style="width: 90%;">See all posts of user</button>
+  </div>
 </div>

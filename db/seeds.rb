@@ -26,4 +26,6 @@ posts = Post.create([
     { user:users[2], title: "How I Use Tachyons for CSS", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
     { user:users[0], title: "Whats your opinion about nextjs13", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
     { user:users[1], title: "Leaning RoR in 2022", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
+    { user:users[0], title: "What is a professiona tool anyway?", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
+    { user:users[0], title: "What is a professiona tool anyway?", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
 ])
