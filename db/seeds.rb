@@ -34,3 +34,8 @@ comments = Comment.create([
   { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
   { user:users[0], post:posts[0], text: "Nicely put!" },
 ])
+
+likes = Like.create([
+  { user:users[1], post:posts[0]},
+  { user:users[2], post:posts[0]},
+])
