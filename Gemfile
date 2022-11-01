@@ -71,3 +71,5 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
 end
+
+gem "bullet", "~> 7.0"
