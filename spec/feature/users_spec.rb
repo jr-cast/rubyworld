@@ -5,10 +5,21 @@ RSpec.describe 'Users_controller_feature', type: :feature do
     Rails.application.load_seed
   end
 
-  it 'displays comment counter in index page' do
-    visit '/users'
-    expect(page).to have_text('Posts:')
+  it 'display registered username in the screen' do
+   visit '/users'
+   expect(page).to have_text('Pedro' && 'Maya' && 'Montiel')
   end
+
+  it 'display correct number of posts' do
+    visit '/users'
+    expect(page).to have_text("4" && "2" && "1")
+  end
+
+  it 'display specific users profile picture' do
+    visit '/users'
+    expect(page).to have_css("img[src*='twitch-profile-photo-oEqs2yqaL8s.jpg']")
+  end
+
 
   it 'displays details of user account' do
     visit '/users/1'
