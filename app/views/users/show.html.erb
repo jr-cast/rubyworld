@@ -35,11 +35,11 @@
             <% if post.comments_counter == nil %>
                <% post.comments_counter = 0 %>
             <% end %>
-          <p class="px-2 m-0">Comments: <%= post.comments_counter %></p>
+          <p class="px-2 m-0 text-danger" style="font-weight: bold;">Comments: <%= post.comments_counter %></p>
             <% if post.likes_counter == nil %>
                <% post.likes_counter = 0 %>
             <% end %>
-          <p class="px-2 m-0">Likes: <%= post.likes_counter %></p>
+          <p class="px-2 m-0 text-danger" style="font-weight: bold;">Likes: <%= post.likes_counter %></p>
         </div>
       </div>
     <% end %> 

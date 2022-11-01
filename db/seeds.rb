@@ -29,3 +29,8 @@ posts = Post.create([
     { user:users[0], title: "What is a professiona tool anyway?", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
     { user:users[0], title: "What is a professiona tool anyway?", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
 ])
+
+comments = Comment.create([
+  { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
+  { user:users[0], post:posts[0], text: "Nicely put!" },
+])
