@@ -9,7 +9,7 @@ class PostsController < ApplicationController
 
   def create
     new_post = Post.new(params.require(:post).permit(:title, :text))
-    new_post.user_id = 3
+    new_post.user_id = current_user.id
 
     respond_to do |format|
       format.html do
