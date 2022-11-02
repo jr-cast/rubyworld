@@ -1,20 +1,35 @@
-<nav class="navbar navbar-expand-lg bg-danger p-2 fixed-top">
-  <a class="navbar-brand text-white" href="#">Rubyworld</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
+<nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <div class="container-fluid">
+    <a class="navbar-brand fw-bold" href="#">RUBYWORLD</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark">
+            <% if user_signed_in?%>
+              <li>
+                <%= link_to "Sign Out", 
+                destroy_user_session_path, 
+                class: "dropdown-item", 
+                data: { turbo_method: :delete }  %>
+              </li>
+            <% else %>
+              <li>
+                <%= link_to "Sign In", 
+                new_user_session_path, 
+                class: "dropdown-item" %>
+              </li>
+            <% end %>
+            <li><a class="dropdown-item" href="#">Recent posts</a></li>
+            <li><a class="dropdown-item" href="#">Users</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
   </div>
 </nav>
