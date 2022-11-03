@@ -1,7 +1,7 @@
 <%= render "shared/nav" %>
 
-<div class="users-container mt-5">
-  <ul class="p-0 pt-4">
+<div class="users-container">
+  <ul class="p-0 pt-2">
     <% @users.order(posts_counter: :desc).each do |user|%>
       <%= link_to user_path(user.id), {:style=>'color:black; text-decoration: none;'} do %>
         <li 

@@ -14,8 +14,10 @@
   </head>
 
   <body class="bg-light">
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="wrapper border border-4 border-danger">
+      <%= yield %>
+      <p class="notice fw-bold"><%= notice %></p>
+      <p class="alert fw-bold"><%= alert %></p>
+    </div>
   </body>
 </html>
