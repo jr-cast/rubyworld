@@ -1,6 +1,9 @@
 <%= render "shared/nav" %>
 
-<div class="user-container" style="margin-top:4em;">
+<div 
+  class="user-container" 
+  style="margin-top:4em;"
+>
   <div 
     class="header d-flex justify-content-between p-4 m-2 border rounded bg-white" 
     style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
@@ -23,36 +26,41 @@
     <h1 style="font-weight: bold;">About</h1>
     <p><%= @user.bio %></p>
   </div>
-  <div class="p-4 m-2 border rounded bg-white" style="min-height: 30vh;">
-    <h1 class="mb-4" style="font-weight: bold;">Recent posts</h1>
-    <% @user.most_recent_posts.each do |post| %>
-      <div 
-        class="p-4 border border-2 border-danger rounded mb-2"
-        style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
-      >
-        <p class="m-0" style="font-weight: bold;"><%= post.title %></p>
-        <div class="d-flex justify-content-end">
-            <% if post.comments_counter == nil %>
-               <% post.comments_counter = 0 %>
-            <% end %>
-          <p class="px-2 m-0 text-danger" style="font-weight: bold;">Comments: <%= post.comments_counter %></p>
-            <% if post.likes_counter == nil %>
-               <% post.likes_counter = 0 %>
-            <% end %>
-          <p class="px-2 m-0 text-danger" style="font-weight: bold;">Likes: <%= post.likes_counter %></p>
-        </div>
-      </div>
-    <% end %> 
-  </div>
-  <div class="d-flex justify-content-center">
 
-  <div class="w-100 d-flex justify-content-center p-2">
-    <%= button_to user_posts_path(@user.id), class: "btn btn-danger p-3 px-5", method: :get do%>
-      See all posts of user
-      <i class="fa-sharp fa-solid fa-magnifying-glass px-1"></i>
-    <% end %>
-  </div>
+  <% if @user.posts.length > 0 %>
+    <div class="p-4 m-2 border rounded bg-white" style="min-height: 35vh;">
+      <h1 class="mb-4" style="font-weight: bold;">Recent posts</h1>
+        <% @user.most_recent_posts.each do |post| %>
+          <div 
+            class="p-4 border border-2 border-danger rounded mb-2"
+            style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+          >
+            <p class="m-0" style="font-weight: bold;"><%= post.title %></p>
+            <div class="d-flex justify-content-end">
+                <% if post.comments_counter == nil %>
+                   <% post.comments_counter = 0 %>
+                <% end %>
+              <p class="px-2 m-0 text-danger" style="font-weight: bold;">Comments: <%= post.comments_counter %></p>
+                <% if post.likes_counter == nil %>
+                   <% post.likes_counter = 0 %>
+                <% end %>
+              <p class="px-2 m-0 text-danger" style="font-weight: bold;">Likes: <%= post.likes_counter %></p>
+            </div>
+          </div>
+        <% end %>
 
-  </button>
-  </div>
+          <div class="w-100 d-flex justify-content-center p-2">
+            <%= button_to user_posts_path(@user.id), class: "btn btn-danger p-3 px-5", method: :get do%>
+              See all posts of user
+              <i class="fa-sharp fa-solid fa-magnifying-glass px-1"></i>
+            <% end %>
+          </div>
+    </div>
+  <% else %>
+    <div class="p-4 m-2 border rounded bg-white d-flex justify-content-center align-items-center" style="min-height: 45vh;">
+      <h1 class="fs-1 fst-italic text-center text-secondary pt-4">No posts from this user yet 😿</h1>
+      
+    </div>
+  <% end %> 
+
 </div>
