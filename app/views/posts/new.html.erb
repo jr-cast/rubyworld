@@ -1,27 +1,31 @@
 <%= render "shared/nav" %>
 
-<div class="d-flex justify-content-center align-items-center" style="height: 100vh;">
-  <div 
-    class="border border-4 border-danger p-4 rounded d-flex flex-column justify-content-around"
-    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); height: 60vh; width: 90%;"
-  >
-    <h3 class="fw-bold display-5 text-center">Create a new post!</h3>
+<div 
+  class="new-post d-flex justify-content-center align-items-center"
+  style="height: 97vh;"
+>
+  <div class="card shadow">
+    <div class="card-header">
+      <h2 class="text-center m-0 p-2">Create a new post 📝</h2>
+    </div>
+    <div class="card-body">
+      <%= form_with model: new_post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
+        
+          <div class="form-group">
+            <%= f.label :title, class: "fs-4 fw-bold text-danger mb-2" %><br>
+            <%= f.text_field :title, class: "form-control form-control-md mb-2", placeholder: "Compelling title here!" %>
+          </div>
 
-    <%= form_with model: new_post, url: user_posts_path, method: :post, local: true, scope: :post do |f| %>
-      <div 
-        style="height: 20em;"
-      >
-        <div>
-          <%= f.label :title, class: "fs-4 fw-bold text-danger" %><br>
-          <%= f.text_field :title, class: "border border-2 border-danger p-2 mb-3 w-100 rounded", placeholder: "Compelling title here!" %>
+          <div>
+            <%= f.label :text, class: "fs-4 fw-bold text-danger" %><br>
+            <%= f.text_area :text, class: "form-control form-control-md mb-2", style: "height:11.5em; width: 100%;", placeholder: "Your post here..." %>
+          </div>
+        
+        <div class="actions">
+          <%= f.submit "Create Post", class: "fs-3 fw-bold btn btn-danger p-3 px-5 w-100" %>
         </div>
-
-        <div>
-          <%= f.label :text, class: "fs-4 fw-bold text-danger" %><br>
-          <%= f.text_area :text, class: "border border-2 border-danger p-2 rounded", style: "height:11.5em; width: 100%;", placeholder: "Your post here..." %>
-        </div>
-      </div>
-      <%= f.submit "Create Post", class: "fs-3 fw-bold btn btn-danger p-3 px-5 w-100" %>
-    <% end %>
+      <% end %>
+    </div>
   </div>
-</div>
+ </div>
+

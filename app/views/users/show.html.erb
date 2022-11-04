@@ -1,12 +1,12 @@
 <%= render "shared/nav" %>
 
 <div 
-  class="user-container" 
+  class="user-container d-flex flex-column align-items-center" 
   style="margin-top:4em;"
 >
   <div 
-    class="header d-flex justify-content-between p-4 m-2 border rounded bg-white" 
-    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+    class="header d-flex justify-content-between p-4 border rounded-4 bg-white" 
+    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 97%;"
   >
     <div class="profile-pic d-flex flex-column justify-content-start mr-4">
       <img src=<%= @user.photo %> alt="profile-picture" class="rounded" style="width: 150px; heigth: auto"/>
@@ -20,49 +20,49 @@
     </div>
   </div>
   <div 
-    class="bio p-4 m-2 border rounded bg-white"
-    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+    class="bio p-4 border rounded-4 bg-white"
+    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 97%"
   >
     <h1 style="font-weight: bold;">About</h1>
     <p><%= @user.bio %></p>
   </div>
 
   <% if @user.posts.length > 0 %>
-    <div class="p-4 m-2 border rounded bg-white" style="min-height: 35vh;">
+    <div class="p-4 border rounded-4 bg-white" style="min-height: 35vh;  width: 97%">
       <h1 class="mb-4" style="font-weight: bold;">Recent posts</h1>
         <% @user.most_recent_posts.each do |post| %>
           <%= link_to user_post_path(@user.id, post.id), {:style=>'color:black; text-decoration: none;'} do %>
             <div 
-              class="p-4 border border-2 border-danger rounded mb-2"
+              class="recent-post p-4 rounded mb-2"
               style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
             >
-              <p class="m-0" style="font-weight: bold;"><%= post.title %></p>
+              <h5 class="m-0" style="font-weight: bold font-size: 1em;"><%= post.title %></h5>
               <div class="d-flex justify-content-end mt-2" style="font-size: 0.85em">
                   <% if post.comments_counter == nil %>
                      <% post.comments_counter = 0 %>
                   <% end %>
-                <p class="px-2 m-0 text-danger" style="font-weight: bold;">Comments: <%= post.comments_counter %></p>
+                <p class="px-2 m-0" style="font-weight: bold;">Comments: <%= post.comments_counter %></p>
                   <% if post.likes_counter == nil %>
                      <% post.likes_counter = 0 %>
                   <% end %>
-                <p class="px-2 m-0 text-danger" style="font-weight: bold;">Likes: <%= post.likes_counter %></p>
+                <p class="px-2 m-0" style="font-weight: bold;">Likes: <%= post.likes_counter %></p>
               </div>
             </div>
           <% end %>
         <% end %>
-
-          <div class="w-100 d-flex justify-content-center p-2">
-            <%= button_to user_posts_path(@user.id), class: "btn btn-danger p-3 px-5", method: :get do%>
-              See all posts of user
-              <i class="fa-sharp fa-solid fa-magnifying-glass px-1"></i>
-            <% end %>
-          </div>
     </div>
+      <%= button_to user_posts_path(@user.id), class: "btn btn-danger p-3 px-5 d-flex justify-content-center align-items-center mt-2", method: :get do%>
+        <h2 class="m-0 px-2">See all posts</h2>
+        <i class="fa-sharp fa-solid fa-magnifying-glass px-1"></i>
+      <% end %>
   <% else %>
-    <div class="p-4 m-2 border rounded bg-white d-flex justify-content-center align-items-center" style="min-height: 45vh;">
+    <div class="p-4 m-1 shadow rounded-4 bg-white d-flex justify-content-center align-items-center" style="min-height: 36vh; width: 96%;">
       <h1 class="fs-1 fst-italic text-center text-secondary pt-4">No posts from this user yet 😿</h1>
-      
     </div>
+      <%= button_to new_user_post_path(@user.id), class: "btn btn-danger p-3 mt-2 px-5 d-flex justify-content-center align-items-center", method: :get do%>
+        <h2 class="m-0 px-2">Create a new post</h2>
+        <i class="fa-sharp fa-solid fa-plus px-1"></i>
+      <% end %>
   <% end %> 
 
 </div>

@@ -44,10 +44,10 @@
       class="text-center d-flex justify-content-around flex-column align-items-center"
       style="height: 400px; width: 100%;"  
     >
-      <h1 class="mt-5">No comments in this posts, add one! ✍️</h1>
+      <h1 class="fs-1 fst-italic text-center text-secondary pt-4" style="margin-top: 3em;">No comments in this post, add one! ✍️</h1>
       <%= button_to user_posts_path(@user.id), 
         class: "shadow btn btn-danger p-3 fs-5 fw-bold", 
-        style: "width: 350px;", method: :get do %>
+        style: "width: 350px; margin-top: 2em;", method: :get do %>
         Add a comment
         <i class="fa-regular fa-comments px-1 "></i>
       <% end %>
