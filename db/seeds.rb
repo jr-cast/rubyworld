@@ -47,18 +47,18 @@
 #     { user_id: 5, title: "What is a professiona tool anyway?", text: "I was using my Macbook Pro when all of a sudden the screen turned black and it started spewing white smoke like it had just elected the" },
 # ])
 
-# comments = Comment.create([
-#   { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
-#   { user:users[0], post:posts[0], text: "Nicely put!" },
-#   { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
-#   { user:users[0], post:posts[0], text: "Nicely put!" },
-#   { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
-#   { user:users[0], post:posts[0], text: "Nicely put!" },
-#   { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
-#   { user:users[0], post:posts[0], text: "Nicely put!" },
-#   { user:users[1], post:posts[0], text: "I think any tool that increase productivity" },
-#   { user:users[0], post:posts[0], text: "Nicely put!" },
-# ])
+comments = Comment.create([
+  { user_id: 6, post_id: 1, text: "I think any tool that increase productivity" },
+  { user_id: 7, post_id: 1, text: "Nicely put!" },
+  { user_id: 6, post_id: 1, text: "I think any tool that increase productivity" },
+  { user_id: 7, post_id: 1, text: "Nicely put!" },
+  { user_id: 6, post_id: 1, text: "I think any tool that increase productivity" },
+  { user_id: 7, post_id: 1, text: "Nicely put!" },
+  { user_id: 6, post_id: 1, text: "I think any tool that increase productivity" },
+  { user_id: 7, post_id: 1, text: "Nicely put!" },
+  { user_id: 6, post_id: 1, text: "I think any tool that increase productivity" },
+  { user_id: 7, post_id: 1, text: "Nicely put!" },
+])
 
 # likes = Like.create([
 #   { user:users[1], post:posts[0]},

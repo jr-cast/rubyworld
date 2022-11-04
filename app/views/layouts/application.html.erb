@@ -13,10 +13,10 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="bg-light">
+  <body class="bg-light" style="height: 100vh">
     <div 
       class="wrapper border border-4 border-danger"
-      style="height: 100%;"
+      style="min-height: 100%;"
     >
       <%= yield %>
       <p class="notice fw-bold m-0"><%= notice %></p>

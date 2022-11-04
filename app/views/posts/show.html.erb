@@ -1,8 +1,10 @@
 <%= render "shared/nav" %>
-<div class="d-flex flex-column align-items-center">
+<div 
+  class="d-flex flex-column align-items-center"
+>
   <div 
-    class="d-flex flex-column justify-content-between p-4 border border-3 border-danger rounded bg-white"
-    style="margin-top: 4em; width: 90%; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);"
+    class="d-flex flex-column justify-content-around p-4 border border-3 border-danger rounded bg-white"
+    style="margin-top: 4.5em; width: 95%; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); height: 350px;"
   >
     <div class="d-flex justify-content-between align-items-center">
       <img src=<%= @user.photo %> alt="profile-picture" class="rounded" style="width: 80px; heigth: auto; flex: 1;"/>
@@ -22,19 +24,34 @@
   </div>
   
   <div 
-    class="w-100 d-flex flex-column align-items-end px-4 py-2" 
-    style="min-height: 40vh;"
-  >
-    <% @post.comments.each do |comment| %>
-    
-      <div 
-        class="d-flex flex-column w-100 mb-2 rounded p-4 bg-white border border-1 border-light"
-        style="list-style: none; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);"
-      >
-        <strong><%= User.find(comment.user_id).name %></strong>
-        <code><%= comment.created_at %></code>
-        <p class="m-0"><%= comment.text %></p>
-      </div>
+    class="d-flex flex-column align-items-end px-4 py-2" 
+    style="min-height: 40vh; width: 100%"
+  > 
+    <% if @post.comments.length > 0 %>
+      <% @post.comments.each do |comment| %>
+
+        <div 
+          class="d-flex flex-column w-100 mb-2 rounded p-4 bg-white border border-1 border-light"
+          style="list-style: none; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2);"
+        >
+          <strong><%= User.find(comment.user_id).name %></strong>
+          <code><%= comment.created_at %></code>
+          <p class="m-0"><%= comment.text %></p>
+        </div>
+      <% end %>
+    <% else %>
+    <div 
+      class="text-center d-flex justify-content-around flex-column align-items-center"
+      style="height: 400px; width: 100%;"  
+    >
+      <h1 class="mt-5">No comments in this posts, add one! ✍️</h1>
+      <%= button_to user_posts_path(@user.id), 
+        class: "shadow btn btn-danger p-3 fs-5 fw-bold", 
+        style: "width: 350px;", method: :get do %>
+        Add a comment
+        <i class="fa-regular fa-comments px-1 "></i>
+      <% end %>
+    </div>
     <% end %>
   </div>
 </div>

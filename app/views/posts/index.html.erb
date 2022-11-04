@@ -29,7 +29,7 @@
           style="list-style: none; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
         >
           <h4><%= post.title %></h4>
-          <p class="m-0"><%= post.text.truncate(35) %></p>
+          <p class="m-0"><%= post.text.truncate(60) %></p>
           <div class="d-flex justify-content-end">
               <% if post.comments_counter == nil %>
               <% post.comments_counter = 0 %>
