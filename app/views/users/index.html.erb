@@ -2,7 +2,7 @@
 
 <div class="users-container" style="margin-top: 3.75em;">
   <ul class="p-0 pt-2">
-    <% @users.order(posts_counter: :asc).each do |user|%>
+    <% @users.order(posts_counter: :desc).each do |user|%>
       <%= link_to user_path(user.id), {:style=>'color:black; text-decoration: none;'} do %>
         <li 
           class="post-card d-flex justify-content-between align-center list-unstyled mb-2 p-4"
