@@ -47,7 +47,7 @@
       <h1 class="fs-1 fst-italic text-center text-secondary pt-4" style="margin-top: 2em;">No comments in this post, add one! ✍️</h1>
     </div>
     <div class="w-100"
-      <%= button_to user_posts_path(@user.id), 
+      <%= button_to new_user_post_comment_path(@user.id, @post.id), 
         class: "shadow btn btn-danger p-3 fs-5 fw-bold", 
         style: "width: 100%; margin-top: 2em;", method: :get do %>
         Add a comment
