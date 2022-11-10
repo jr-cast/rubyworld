@@ -28,7 +28,7 @@
     style="min-height: 45vh; width: 100%"
   > 
     <% if @post.comments.length > 0 %>
-      <% @post.comments.each do |comment| %>
+      <% @post.comments.order(created_at: :desc).each do |comment| %>
 
         <div 
           class="d-flex flex-column w-100 mb-2 rounded p-4 bg-white border border-1 border-light"
