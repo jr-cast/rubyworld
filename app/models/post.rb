@@ -9,9 +9,14 @@ class Post < ApplicationRecord
   validates :likes_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
   after_create :update_posts_counter
+  after_destroy :decrement_posts_counter
 
   def update_posts_counter
     user.increment!(:posts_counter)
+  end
+
+  def decrement_posts_counter
+    user.decrement!(:posts_counter)
   end
 
   def recent_comments
