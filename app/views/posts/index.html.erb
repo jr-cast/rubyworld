@@ -1,9 +1,9 @@
 <%= render "shared/nav" %>
 
-<div class="posts-container mt-5">
+<div class="posts-container mt-5 d-flex flex-column align-items-center">
   <div 
-    class="header d-flex justify-content-between p-4 m-2 border rounded bg-white" 
-    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+  class="header d-flex justify-content-between p-4 border rounded-4 bg-white mt-3" 
+    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 97%;"
   >
     <div class="profile-pic d-flex flex-column justify-content-start mr-4">
       <img src=<%= @user.photo %> alt="profile-picture" class="rounded" style="width: 150px; heigth: auto"/>
@@ -17,6 +17,7 @@
     </div>
   </div>
 
+  <% if @posts.length > 0 %>
   <ul 
     class="p-4 m-2 border rounded bg-white"
     style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
@@ -41,7 +42,10 @@
             <p class="px-2 m-0 text-danger" style="font-weight: bold;">Likes: <%= post.likes_counter %></p>
           </div>
         </li>
-      <% end %>
+      <% end %>        
+      <div class="p-4 m-1 shadow rounded-4 bg-white d-flex justify-content-center align-items-center" style="min-height: 36vh; width: 96%;">
+        <h1 class="fs-1 fst-italic text-center text-secondary pt-4">No posts from this user yet 😿</h1>
+      </div>
       <div class="d-flex justify-content-end">
         <% if post.comments_counter != 0 %>
           <div class="p-2 mb-3 rounded bg-white" style="border: 2px dashed black; width: 85%;">
@@ -57,4 +61,16 @@
       </div>
     <% end %>
   </ul>
+
+  <% else %>
+    <div class="p-4 m-1 shadow rounded-4 bg-white d-flex justify-content-center align-items-center" style="min-height: 55vh; width: 95%;">
+      <h1 class="fs-1 fst-italic text-center text-secondary pt-4">No posts from this user yet 😿</h1>
+    </div>
+    <%= button_to new_user_post_path(@user.id), class: "btn btn-danger p-3 mt-2 px-5 d-flex justify-content-center align-items-center", method: :get do%>
+        <h2 class="m-0 px-2">Create a new post</h2>
+        <i class="fa-sharp fa-solid fa-plus px-1"></i>
+    <% end %>
+
+  <% end %>
+
 </div>
