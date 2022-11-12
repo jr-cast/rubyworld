@@ -11,6 +11,16 @@ class User < ApplicationRecord
   validates :photo, presence: true
   validates :posts_counter, numericality: { greater_than_or_equal_to: 0 }, allow_nil: true
 
+  Roles = [:user, :admin]
+
+  def is?(requested_role)
+    self.role == requested_role.to_s
+  end
+
+  def admin?
+    is?('admin')
+  end
+
   def most_recent_posts
     posts.order(created_at: :desc).limit(3)
   end

@@ -57,20 +57,17 @@
         <h2 class="m-0 px-2">See all posts</h2>
         <i class="fa-sharp fa-solid fa-magnifying-glass px-1"></i>
       <% end %>
-      <%= button_to new_user_post_path(@user.id), 
-        class: "btn btn-danger p-3 mt-2 px-5 d-flex justify-content-center align-items-center", style: "width: 360px;",  
-        method: :get do%>
-        <h2 class="m-0 px-2">Create a new post</h2>
-        <i class="fa-sharp fa-solid fa-plus px-1"></i>
-      <% end %>
   <% else %>
     <div class="p-4 m-1 shadow rounded-4 bg-white d-flex justify-content-center align-items-center" style="min-height: 36vh; width: 96%;">
       <h1 class="fs-1 fst-italic text-center text-secondary pt-4">No posts from this user yet 😿</h1>
     </div>
-      <%= button_to new_user_post_path(@user.id), class: "btn btn-danger p-3 mt-2 px-5 d-flex justify-content-center align-items-center", method: :get do%>
+  <% end %> 
+  <% if current_user.id == @user.id %>
+      <%= button_to new_user_post_path(@user.id), 
+      class: "btn btn-danger p-3 px-5 d-flex justify-content-center align-items-center mt-2", style: "width: 360px;", 
+      method: :get do%>
         <h2 class="m-0 px-2">Create a new post</h2>
         <i class="fa-sharp fa-solid fa-plus px-1"></i>
       <% end %>
-  <% end %> 
-
+  <% end %>
 </div>
