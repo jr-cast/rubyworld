@@ -32,6 +32,6 @@ class CommentsController < ApplicationController
 
   def destroy
     Comment.destroy(params[:id])
-    redirect_back(fallback_location: root_path)
+    redirect_to user_posts_path(params.require(:user_id))
   end
 end

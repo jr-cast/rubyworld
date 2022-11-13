@@ -1,5 +1,4 @@
 class PostsController < ApplicationController
-
   def new
     new_post = Post.new
     respond_to do |format|
