@@ -1,5 +1,8 @@
-<div class="col-lg-6 mx-lg-auto">
-  <div class="card shadow">
+<div 
+  class="col-lg-6 mx-lg-auto d-flex flex-column justify-content-center align-items-center bg-danger px-4" 
+  style="height: 100vh;"
+>
+  <div class="card shadow w-100">
     <div class="card-header">
       <h2 class="text-center">Sign in</h2>
     </div>
@@ -20,7 +23,7 @@
           </div>
         <% end %>
         <div class="actions">
-          <%= f.submit "Log in", class: "btn btn-primary btn-lg mb-3" %>
+          <%= f.submit "Log in", class: "btn btn-danger btn-lg mb-3" %>
         </div>
       <% end %>
       <%= render "users/shared/links" %>
