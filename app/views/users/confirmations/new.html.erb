@@ -1,7 +1,7 @@
-<div class="col-lg-6 mx-lg-auto">
-  <div class="card shadow">
+<div class="col-lg-6 mx-lg-auto bg-danger d-flex flex-column justify-content-center align-items-center px-2" style="height: 100vh;">
+  <div class="card shadow w-100">
     <div class="card-header">
-      <h2 class="text-center">Resend confirmation instructions</h2>
+      <h2 class="text-center display-5 fw-bold p-2 m-0">Resend confirmation instructions</h2>
     </div>
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
@@ -13,7 +13,7 @@
         </div>
       
         <div class="actions">
-          <%= f.submit "Resend confirmation instructions", class: "btn btn-primary btn-lg mb-2" %>
+          <%= f.submit "Resend confirmation instructions", class: "btn btn-danger btn-lg mb-2 mt-2 w-100" %>
         </div>
       <% end %>
       
