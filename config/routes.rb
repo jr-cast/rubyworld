@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     confirmations: 'users/confirmations'
   }
   # Defines the root path route ("/")
-  root "users#index"
+  root "users#show"
 
   resources :users, only: [:index, :show] do
     resources :posts, only: [:index, :show, :new, :create, :destroy] do
