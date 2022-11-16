@@ -26,8 +26,21 @@
                 class: "dropdown-item" %>
               </li>
             <% end %>
-            <li><a class="dropdown-item" href="#">Recent posts</a></li>
-            <li><a class="dropdown-item" href="#">Users</a></li>
+            <li>
+              <%= link_to "My profile", 
+              root_path, 
+              class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to "Recent posts", 
+              all_posts_path, 
+              class: "dropdown-item" %>
+            </li>
+            <li>
+              <%= link_to "Active Users", 
+              users_path, 
+              class: "dropdown-item" %>
+            </li>
           </ul>
         </li>
       </ul>

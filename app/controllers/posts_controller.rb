@@ -33,6 +33,11 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
   end
 
+  def all_posts
+   @all_posts = Post.all.includes([:user])
+  #  render json: @all_posts
+  end
+
   def destroy
     Post.destroy(params[:id])
     redirect_to user_path(params[:user_id])
