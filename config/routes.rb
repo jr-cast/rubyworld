@@ -15,4 +15,5 @@ Rails.application.routes.draw do
   end
 
   get '/recent_posts', to: 'posts#recent_posts'
+  get '/all_posts', to: 'posts#all_posts'
 end
