@@ -33,9 +33,8 @@ class PostsController < ApplicationController
     @post = @user.posts.find(params[:id])
   end
 
-  def all_posts
-   @all_posts = Post.all.includes([:user])
-  #  render json: @all_posts
+  def recent_posts
+   @recent_posts = Post.all.includes([:user]).order(created_at: :desc).limit(4)
   end
 
   def destroy
