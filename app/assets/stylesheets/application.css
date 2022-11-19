@@ -16,6 +16,25 @@
   color: black;
 }
 
+.user {
+  font-weight: bold;
+  color: #DC3545;
+}
+
+.post-card:hover .user {
+  color: black;
+}
+
+
+.par {
+  color: #DC3545;
+  font-weight: bold;
+}
+
+.post-card:hover .par {
+  color: black;
+}
+
 .recent-post {
   border: 2px solid #DC3545;
 }
@@ -29,5 +48,9 @@
 }
 
 .recent-post:hover p {
+  color: black;
+}
+
+.post-card:hover p {
   color: black;
 }
