@@ -4,13 +4,13 @@
 >
   <div 
     class="d-flex flex-column justify-content-around p-4 border border-3 border-danger rounded bg-white"
-    style="margin-top: 4.5em; width: 95%; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); max-height: 350px;"
+    style="margin-top: 4.5em; width: 95%; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); min-height: 250px;"
   >
     <div class="d-flex justify-content-between align-items-center">
       <img src=<%= @user.photo %> alt="profile-picture" class="rounded" style="width: 80px; heigth: auto; flex: 1;"/>
       <h2 style="flex: 2; padding-left: 0.5em; margin: 0%;"><%= @post.title %></h2>
     </div> 
-    <p class="m-0 mt-2 mb-2" style="font-size: 1.1em"><%= @post.text %></p>
+    <p class="d-flex m-0 mt-2 mb-2" style="font-size: 1.1em"><%= @post.text %></p>
         <div class="d-flex justify-content-end">
             <% if @post.comments_counter == nil %>
               <% @post.comments_counter = 0 %>
@@ -44,22 +44,9 @@
           </div>
           <div>
             <% if ((can? :delete, @post) || (comment.user_id == current_user.id)) %>
-                
                 <%= link_to user_post_comment_path(@user.id, @post.id, comment.id), class: "text-decoration-none text-reset" do %>
                   <button class="btn border border-2 border-danger text-danger fw-bold">X</button>
                 <% end %>
-                
-                                  <%
-=begin%>
- <%= button_to "X", user_post_comment_path(@post.user_id, @post.id, comment.id), 
-                    method: :delete, data: {turbo: false}, 
-                    class: "btn btn-danger w-100",
-                    style: "padding-left: 0.75em; padding-right: 0.75em;" 
-                  %>  
-<%
-=end%>
-
-
             <% end %>
           </div>
         </div>
