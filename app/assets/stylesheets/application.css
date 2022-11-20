@@ -55,3 +55,14 @@
 .post-card:hover p {
   color: black;
 }
+
+@keyframes fadeout {
+  0%{ opacity: 0;}
+  100%{ opacity: 1;}
+}
+
+.devise-cont {
+  animation: fadeout 3s ;
+  animation-iteration-count: 1;
+  text-align: center;
+}
