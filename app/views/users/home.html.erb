@@ -11,7 +11,7 @@
     <div class="profile-pic d-flex flex-column justify-content-start mr-4">
       <img src=<%= @user.photo %> alt="profile-picture" class="rounded" style="width: 150px; heigth: auto"/>
     </div>
-    <div class="right d-flex flex-column justify-content-around" style="width: 50%">
+    <div class="right d-flex flex-column justify-content-around ms-4" style="width: 50%">
       <h1 class="display-1 text-danger" style="font-weight: bold;"><%= @user.name %></h1>
        <% if @user.posts_counter == nil %>
           <% @user.posts_counter = 0 %>

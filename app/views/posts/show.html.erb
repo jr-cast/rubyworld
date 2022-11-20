@@ -24,6 +24,7 @@
     <% if can? :delete, @post %>
       <%= button_to "Delete Post", user_post_path, method: :delete, data: {turbo: false}, class: "btn btn-danger w-100 mt-3" %>
     <% end %>
+      <%= button_to "Like Post", user_post_likes_path(@user.id, @post.id), method: :post, data: {turbo: false}, class: "btn btn-danger w-100 mt-3" %>
   </div>
   
   <div 

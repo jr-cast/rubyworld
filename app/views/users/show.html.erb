@@ -37,6 +37,7 @@
               style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
             >
               <h5 class="m-0" style="font-weight: bold font-size: 1em;"><%= post.title %></h5>
+              <p class="user m-0"><%= post.text.truncate(60) %></p>
               <div class="d-flex justify-content-end mt-2" style="font-size: 0.85em">
                   <% if post.comments_counter == nil %>
                      <% post.comments_counter = 0 %>

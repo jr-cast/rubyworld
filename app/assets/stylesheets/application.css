@@ -19,6 +19,7 @@
 .user {
   font-weight: bold;
   color: #DC3545;
+  font-style: italic;
 }
 
 .post-card:hover .user {
