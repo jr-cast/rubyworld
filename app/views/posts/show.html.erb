@@ -52,8 +52,8 @@
           </div>
           <div>
             <% if ((can? :delete, @post) || (comment.user_id == current_user.id)) %>
-                <%= link_to user_post_comment_path(@user.id, @post.id, comment.id), class: "text-decoration-none text-reset" do %>
-                  <button class="btn border border-2 border-danger text-danger fw-bold">X</button>
+                <%= link_to user_post_comment_path(@user.id, @post.id, comment.id), data: { turbo_frame: "modal" }, class: "text-decoration-none text-reset" do %>
+                  <button class="btn border border-2 border-danger text-danger fw-bold">X</button> 
                 <% end %>
             <% end %>
           </div>
