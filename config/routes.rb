@@ -17,4 +17,5 @@ Rails.application.routes.draw do
 
   get '/recent_posts', to: 'posts#recent_posts'
   get '/all_posts', to: 'posts#all_posts'
+  get '/users/:user_id/posts/:post_id/delete_post', to: 'posts#delete_post', as: 'delete_post_modal'
 end
