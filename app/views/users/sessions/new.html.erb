@@ -1,10 +1,14 @@
-<div 
-  class="col-lg-6 mx-lg-auto d-flex flex-column justify-content-center align-items-center bg-danger px-4" 
+<div
+  id="sign-in-background"
+  class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-4 w-100" 
   style="height: 100vh;"
 >
-  <div class="card shadow w-100">
+  <div
+    id="card-signin" 
+    class="card shadow p-4"
+  >
     <div class="card-header">
-      <h1 class="text-center display-1 fw-bold">Sign in</h1>
+      <h1 class="text-center fw-bold">Sign in 💎</h1>
     </div>
     <div class="card-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
