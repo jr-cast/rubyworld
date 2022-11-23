@@ -112,6 +112,10 @@
   padding: 2em;
 }
 
+.post-card {
+  width: 70vw;
+}
+
 @media all and (min-width: 768px) {
   .card {
     width: 50%;
@@ -133,6 +137,19 @@
   .header {
     justify-content: space-around;
   }
+
+  .post-card {
+    width: 50vw;
+  }
+
+  .post-card-cont {
+    width: 70vw;
+  }
+
+  .wrapper {
+    padding: 3em;
+  }
+
 }
 
 @media all and (min-width: 992px) {

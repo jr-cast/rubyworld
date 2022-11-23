@@ -2,15 +2,15 @@
 
 <div class="d-flex flex-column justify-content-center align-items-center">
 <ul 
-    class="p-3 border border rounded-4 bg-white d-flex flex-column justify-content-start align-items-center"
-    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 95%; margin-top: 4em; min-height: 50%;"
+    class="post-card-cont p-3 shadow rounded-4 bg-white d-flex flex-column justify-content-start align-items-center"
+    style="margin-top: 4em; min-height: 50%;"
   >
     <h1 class="display-2 p-3 fw-bold">Recent Posts</h1>
     <% @recent_posts.each do |post|%>
       <%= link_to user_post_path(post.user.id, post.id), {:style=>'color:black; text-decoration: none;'} do %>    
         <li 
           class="post-card p-4 border border-2 border-danger rounded shadow;" 
-          style="list-style: none; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 80vw; margin-bottom: 1em;"
+          style="list-style: none; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); margin-bottom: 1em;"
         >
           <h4><%= post.title %></h4>
           <p class="m-0"><%= post.text.truncate(60) %></p>
@@ -29,7 +29,7 @@
       <% end %>
     <% end %> 
   </ul>
-  <%= button_to all_posts_path,  class: "btn btn-danger p-3 px-5 d-flex justify-content-center align-items-center mt-2 mb-3", style: "width: 350px;", method: :get do%>
+  <%= button_to all_posts_path,  class: "home-btn btn btn-danger p-3 px-5 d-flex justify-content-center align-items-center mt-2 mb-3", method: :get do%>
     <h2 class="m-0 px-2">Chek all posts</h2>
     <i class="fa-regular fa-comments px-1 "></i>
   <% end %>
