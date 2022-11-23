@@ -100,6 +100,11 @@
   height: auto;
 }
 
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
 .header,
 .bio,
 .recent-post-cont,
@@ -123,6 +128,10 @@
 
   .home-btn h2 {
     font-size: 0.75em;
+  }
+
+  .header {
+    justify-content: space-around;
   }
 }
 
@@ -157,12 +166,25 @@
   }
 }
 
-@media all and (min-width: 1200px) {
+@media all and (min-width: 1400px) {
   .card {
     width: 40%;
   }
 
   .user-container {
-    width: 75vw;
+    width: 60vw;
+  }
+
+  .recent-post {
+    padding: 4em;
+  }
+
+  .recent-post h5 {
+    margin-bottom: 1em;
+  }
+
+  .home-btn {
+    min-width: 29vw;
+    margin: 0.25em;
   }
 }
