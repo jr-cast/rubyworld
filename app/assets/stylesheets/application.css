@@ -145,11 +145,6 @@
   .post-card-cont {
     width: 70vw;
   }
-
-  .wrapper {
-    padding: 3em;
-  }
-
 }
 
 @media all and (min-width: 992px) {
