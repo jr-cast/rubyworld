@@ -116,13 +116,24 @@
 .bio,
 .recent-post-cont,
 .recent-post {
-  padding: 2em;
+  padding: 1.5em;
 }
 
 .post-card {
   width: 70vw;
 }
 
+.right-name {
+  font-size: 3em;
+}
+
+.right-counter {
+  font-size: 2em;
+}
+
+.all-post-btn {
+  width: 375px;
+}
 
 @media all and (min-width: 576px) {
   .avatar-card {
@@ -161,6 +172,10 @@
 
   .post-card-cont {
     width: 70vw;
+  }
+  
+  .user-container {
+    margin: 3em;
   }
 }
 
@@ -204,6 +219,14 @@
   .user-data p {
     font-size: 1.5em;
   }
+
+  .all-post-btn {
+    width: 82vw;
+  }
+
+  .bio p {
+    font-size: 1.5em;
+  }
 }
 
 @media all and (min-width: 1400px) {
@@ -226,5 +249,17 @@
   .home-btn {
     min-width: 29vw;
     margin: 0.25em;
+  }
+
+  .user-container {
+    width: 50%;
+  }
+
+  .all-post-btn {
+    width: 48vw;
+  }
+
+  .header {
+    justify-content: space-around;
   }
 }
