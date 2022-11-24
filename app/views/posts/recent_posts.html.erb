@@ -9,8 +9,8 @@
     <% @recent_posts.each do |post|%>
       <%= link_to user_post_path(post.user.id, post.id), {:style=>'color:black; text-decoration: none;'} do %>    
         <li 
-          class="post-card p-4 border border-2 border-danger rounded shadow;" 
-          style="list-style: none; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); margin-bottom: 1em;"
+          class="post-card shadow p-4 border border-2 border-danger rounded shadow;" 
+          style="list-style: none; margin-bottom: 1em;"
         >
           <h4><%= post.title %></h4>
           <code><%= post.created_at %></code>

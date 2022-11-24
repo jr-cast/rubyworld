@@ -100,6 +100,13 @@
   height: auto;
 }
 
+.avatar-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 220px;
+}
+
 .header {
   display: flex;
   justify-content: space-between;
@@ -115,6 +122,16 @@
 .post-card {
   width: 70vw;
 }
+
+
+@media all and (min-width: 576px) {
+  .avatar-card {
+    display: flex;
+    justify-content: space-around;
+    height: 200px;
+  }
+}
+
 
 @media all and (min-width: 768px) {
   .card {
@@ -167,7 +184,7 @@
   }
 
   .avatar {
-    width: 250px; 
+    width: 200px; 
     height: auto;
   }
 
@@ -175,6 +192,17 @@
   .bio,
   .recent-post-cont {
     padding: 3.5em;
+  }
+
+  .avatar-card {
+    display: flex;
+    justify-content: space-around;
+    align-items: stretch;
+    height: 250px;
+  }
+
+  .user-data p {
+    font-size: 1.5em;
   }
 }
 
