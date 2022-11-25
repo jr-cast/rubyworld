@@ -5,7 +5,7 @@
   style="margin-top:4em;"
 >
   <div 
-    class="header d-flex justify-content-betwee p-4 rounded-4 bg-white shadow mb-3" 
+    class="header d-flex justify-content-betwee rounded-4 bg-white shadow mb-3" 
     style="width: 97%;"
   >
     <div class="profile-pic d-flex flex-column justify-content-start mr-4">
@@ -20,7 +20,7 @@
     </div>
   </div>
   <div 
-    class="bio p-4 rounded-4 bg-white shadow mb-3"
+    class="bio rounded-4 bg-white shadow mb-3"
     style="width: 97%"
   >
     <h1 style="font-weight: bold;">About</h1>
@@ -28,7 +28,7 @@
   </div>
 
   <% if @user.posts.length > 0 %>
-    <div class="p-4 rounded-4 bg-white shadow mb-2" style="min-height: 35vh;  width: 97%">
+    <div class="recent-post-cont rounded-4 bg-white shadow mb-2" style="min-height: 35vh;  width: 97%">
       <h1 class="mb-4" style="font-weight: bold;">Recent posts</h1>
         <% @user.most_recent_posts.each do |post| %>
           <%= link_to user_post_path(@user.id, post.id), {:style=>'color:black; text-decoration: none;'} do %>
@@ -65,7 +65,7 @@
   <% end %> 
   <% if current_user.id == @user.id %>
       <%= button_to new_user_post_path(@user.id), 
-      class: "btn btn-danger p-3 px-5 d-flex justify-content-center align-items-center mt-2", style: "width: 360px;", 
+      class: "create-post-btn btn btn-danger p-3 px-5 d-flex justify-content-center align-items-center mt-2", 
       method: :get do%>
         <h2 class="m-0 px-2">Create a new post</h2>
         <i class="fa-sharp fa-solid fa-plus px-1"></i>

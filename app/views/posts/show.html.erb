@@ -3,8 +3,8 @@
   class="d-flex flex-column align-items-center"
 >
   <div 
-    class="d-flex flex-column justify-content-around p-4 border border-3 border-danger rounded bg-white"
-    style="margin-top: 4.5em; width: 95%; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); min-height: 250px;"
+    class="main-post d-flex flex-column justify-content-around border border-3 border-danger rounded bg-white"
+    style="margin-top: 4.5em; box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.2); min-height: 250px;"
   >
     <div class="d-flex justify-content-between align-items-center">
       <img src=<%= @user.photo %> alt="profile-picture" class="rounded" style="width: 80px; heigth: auto; flex: 1;"/>
@@ -68,7 +68,7 @@
       class="text-center d-flex justify-content-around flex-column align-items-center"
       style="height: 400px; width: 100%;"  
     >
-      <h1 class="fs-1 fst-italic text-center text-secondary pt-4" style="margin-top: 2em;">No comments in this post, add one! ✍️</h1>
+      <h1 class="no-comments fst-italic text-center text-secondary pt-4" style="margin-top: 2em;">No comments in this post, add one! ✍️</h1>
     </div>
     <% end %>
   </div>

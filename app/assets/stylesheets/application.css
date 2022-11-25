@@ -135,6 +135,19 @@
   width: 375px;
 }
 
+.create-post-btn {
+  width: 375px;
+}
+
+.posts-container {
+  height: 100vh;
+}
+
+.main-post {
+  width: 90vw;
+  padding: 1.5em;
+}
+
 @media all and (min-width: 576px) {
   .avatar-card {
     display: flex;
@@ -176,6 +189,15 @@
   
   .user-container {
     margin: 3em;
+  }
+
+  .no-comments {
+    font-size: 1.5em;
+  }
+
+  .main-post {
+    width: 65vw;
+    padding: 3em;
   }
 }
 
@@ -220,12 +242,18 @@
     font-size: 1.5em;
   }
 
-  .all-post-btn {
+  .all-post-btn,
+  .create-post-btn {
     width: 82vw;
   }
 
   .bio p {
     font-size: 1.5em;
+  }
+
+  .main-post {
+    width: 45vw;
+    padding: 3em;
   }
 }
 
@@ -247,7 +275,7 @@
   }
 
   .home-btn {
-    min-width: 29vw;
+    min-width: 23vw;
     margin: 0.25em;
   }
 
@@ -255,11 +283,21 @@
     width: 50%;
   }
 
-  .all-post-btn {
+  .all-post-btn,
+  .create-post-btn {
     width: 48vw;
   }
 
   .header {
     justify-content: space-around;
+  }
+
+  .navbar {
+    height: 4em;
+    padding-left: 15em;
+  }
+  .main-post {
+    width: 50vw;
+    padding: 3em;
   }
 }
