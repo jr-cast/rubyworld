@@ -148,6 +148,14 @@
   padding: 1.5em;
 }
 
+.post-text {
+  font-size: 1.2em;
+}
+
+.comment-text {
+  font-size: 1.1em;
+}
+
 @media all and (min-width: 576px) {
   .avatar-card {
     display: flex;
@@ -254,6 +262,14 @@
   .main-post {
     width: 45vw;
     padding: 3em;
+  }
+
+  .post-text {
+    font-size: 1.5em;
+  }
+
+  .comment-text {
+    font-size: 1.3em;
   }
 }
 
