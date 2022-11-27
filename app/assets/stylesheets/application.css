@@ -95,6 +95,14 @@
   height: 100vh;
 }
 
+#sign-up-background {
+  background-image: url("./sign_in.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
 .avatar {
   width: 150px; 
   height: auto;
