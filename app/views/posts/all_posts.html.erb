@@ -1,9 +1,12 @@
 <%= render 'shared/nav' %>
 
-<div class="d-flex flex-column justify-content-center align-items-center">
+<div 
+  class="d-flex flex-column justify-content-center align-items-center"
+    style="min-height: 90vh; margin-top: 4em;"
+>
 <ul 
     class="post-card-cont p-3 shadow rounded-4 bg-white d-flex flex-column justify-content-start align-items-center"
-     style="margin-top: 4em; min-height: 50%;"
+    style="min-height: 75vh;"
   >
     <h1 class="display-2 pb-1 fw-bold p-3 mb-3">All Posts</h1>
     <% @all_posts.each do |post|%>

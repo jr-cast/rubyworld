@@ -36,9 +36,13 @@
           <% end %>
         <% end %>
       </div>
-      
+    
       <% if cannot? :delete, @post %>
-        <%= button_to "Like Post", user_post_likes_path(current_user.id, @post.id), method: :post, data: {turbo: false}, class: "fs-6 btn btn-danger px-4 mt-3 w-100 ms-1 fw-bold"%>
+        <% if @post.likes.where(user_id: current_user.id).length >= 1 %>
+          <%= button_to "Unlike Post", destroy_like_path(current_user.id, @post.id, @post.likes.where(user_id: current_user.id)[0].id), method: :delete, data: {turbo: false}, class: "fs-6 btn btn-danger px-4 mt-3 w-100 ms-1 fw-bold"%>
+        <% else %>
+          <%= button_to "Like Post", user_post_likes_path(current_user.id, @post.id), method: :post, data: {turbo: false}, class: "fs-6 btn btn-danger px-4 mt-3 w-100 ms-1 fw-bold"%>
+        <% end %>
       <% end %>
   </div>
   
