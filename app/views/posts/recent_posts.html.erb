@@ -9,6 +9,11 @@
     style="min-height: 75vh;"
   >
     <h1 class="display-2 p-3 fw-bold">Recent Posts</h1>
+    <% if @recent_posts.length ==0 %>
+      <h1 class="text-center text-secondary position-absolute top-50 start-50 translate-middle fst-italic">
+        No posts to show 😔, create one 😸!
+      </h1>
+    <% end %>
     <% @recent_posts.each do |post|%>
       <%= link_to user_post_path(post.user.id, post.id), {:style=>'color:black; text-decoration: none;'} do %>    
         <li 
