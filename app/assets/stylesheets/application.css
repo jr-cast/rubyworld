@@ -87,15 +87,10 @@
   justify-content: center;
 }
 
-#sign-in-background {
-  background-image: url("./sign_in.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  height: 100vh;
-}
-
-#sign-up-background {
+#sign-in-background,
+#sign-up-background,
+#forgot-password,
+#resend-confirmation {
   background-image: url("./sign_in.jpg");
   background-size: cover;
   background-repeat: no-repeat;

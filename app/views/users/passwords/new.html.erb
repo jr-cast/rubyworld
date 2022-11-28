@@ -1,10 +1,13 @@
-<div 
-  class="col-lg-6 mx-lg-auto bg-danger d-flex flex-column justify-content-center align-items-center px-2" 
+<div
+  id="forgot-password" 
+  class="col-lg-6 d-flex flex-column justify-content-center align-items-center px-3 w-100" 
   style="height: 100vh;"
 >
-  <div class="card shadow w-100">
+  <div 
+    id="card-forgot-pass" 
+    class="card shadow">
     <div class="card-header">
-        <h2 class="text-center display-5 fw-bold p-2">Forgot your password?</h2>
+        <h2 class="text-center display-5 fw-bold p-2">Forgot your password? 😿</h2>
     </div>
         <div class="card-body">
           <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { "data-turbo": "false", method: :post }) do |f| %>
@@ -16,7 +19,7 @@
             </div>
 
             <div class="actions">
-              <%= f.submit "Send me reset password instructions", class: "btn btn-danger btn-lg mb-3 w-100" %>
+              <%= f.submit "Resend password instructions", class: "btn btn-danger btn-lg mb-3 w-100" %>
             </div>
           <% end %>
 
