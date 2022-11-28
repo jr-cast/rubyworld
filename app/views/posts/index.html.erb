@@ -1,6 +1,9 @@
 <%= render "shared/nav" %>
 
-<div class="posts-container mt-5 d-flex flex-column align-items-center">
+<div 
+  class="posts-container mt-5 d-flex flex-column align-items-center"
+  style="min-height: 90vh; margin-top: 4em;"
+>
   <div 
   class="header d-flex justify-content-between p-4 rounded-4 bg-white mt-3" 
     style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 97%;"
@@ -20,7 +23,7 @@
   <% if @posts.length > 0 %>
   <ul 
     class="p-4 m-2 rounded-4 bg-white"
-    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 95%; height: 60vh;"
+    style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15); width: 95%;"
   >
     <h1 class="display-6 fw-bold mb-4">Posts from <%= @user.name%></h1>
     <% @posts.each do |post|%>
