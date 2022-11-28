@@ -90,7 +90,8 @@
 #sign-in-background,
 #sign-up-background,
 #forgot-password,
-#resend-confirmation {
+#resend-confirmation,
+#change-pass {
   background-image: url("./sign_in.jpg");
   background-size: cover;
   background-repeat: no-repeat;
