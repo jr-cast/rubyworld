@@ -75,6 +75,10 @@
   font-size: 3.25em;
 }
 
+.card-w {
+  width: 92vw;
+}
+
 .home-btn {
   width: 94vw;
   font-size: 2em;
@@ -174,6 +178,10 @@
     width: 60vw;
   }
 
+  .card-w {
+    width: 65vw;
+  }
+
   .home-btn-container {
     display: flex;
   }
@@ -216,6 +224,10 @@
 @media all and (min-width: 992px) {
   .user-container {
     width: 85vw;
+  }
+
+  .card-w {
+    width: 45vw;
   }
 
   .home-btn-container {
@@ -280,6 +292,10 @@
 @media all and (min-width: 1400px) {
   .card {
     width: 40vw;
+  }
+
+  .card-w {
+    width: 55vw;
   }
 
   .user-container {
