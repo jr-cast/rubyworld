@@ -1,12 +1,13 @@
 <%= render "shared/nav" %>
 
 <div class="users-container" style="margin-top: 3.75em;">
-  <ul class="p-0 pt-2">
+  <ul 
+    class="p-0 pt-2"
+  >
     <% @users.order(posts_counter: :desc).each do |user|%>
       <%= link_to user_path(user.id), {:style=>'color:black; text-decoration: none;'} do %>
         <li 
-          class="avatar-card list-unstyled mb-2 p-4"
-          style="box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.15);"
+          class="avatar-card list-unstyled mb-2 p-4 border border-1 border-danger shadow rounded-2"
         >
           <div class="profile-pic d-flex flex-column justify-content-center mr-4">
             <img src=<%= user.photo %> alt="profile-picture" class="avatar rounded"/>

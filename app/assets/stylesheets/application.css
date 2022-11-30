@@ -91,6 +91,20 @@
   justify-content: center;
 }
 
+.avatar-card,
+.post-card {
+  background-color: white;
+  transition-property: transform;
+  transition-duration: 0.1s;
+  transition-timing-function: ease-in;
+}
+
+.avatar-card:hover,
+.post-card:hover {
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
 #sign-in-background,
 #sign-up-background,
 #forgot-password,
