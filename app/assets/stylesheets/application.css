@@ -201,7 +201,7 @@
   }
 
   .home-btn {
-    width: 98%;
+    width: 68vw;
     margin: 0.25em;
   }
 
@@ -254,7 +254,7 @@
   }
 
   .home-btn {
-    min-width: 40vw;
+    width: 82vw;
     margin: 0.25em;
   }
 
@@ -332,11 +332,6 @@
     margin-bottom: 1em;
   }
 
-  .home-btn {
-    min-width: 23vw;
-    margin: 0.25em;
-  }
-
   .user-container {
     width: 50%;
   }
@@ -362,4 +357,9 @@
   .comment-card {
     width: 50vw;
   } 
+
+  .home-btn {
+    width: 48vw;
+    margin: 0.25em;
+  }
 }
