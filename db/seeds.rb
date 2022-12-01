@@ -15,16 +15,16 @@ users = User.create([
     { 
       name: "Maya", 
       photo: "https://image.shutterstock.com/image-illustration/casual-young-black-girl-purple-260nw-1806646354.jpg",
-      bio: "A front-end developer, writer and content creator🎥",
+      bio: "A front-end developer, writer and content creator 👨‍💻🎥🔥",
       email: "maya@gmail.com",
       role: 'user',
       password: "asdasd",
       password_confirmation: "asdasd"
     },
     { 
-      name: "Fer", 
+      name: "Monty", 
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTI8-M5qhYrh-TpusBS4QB0EL0lO6_2TmSA2A&usqp=CAU",
-      bio: "A back-end developer who likes to go to the park at all times🦴🌳",
+      bio: "A back-end developer who likes to go to the park at all times 🦴🌳🐶",
       email: "fer@gmail.com",
       role: 'user',
       password: "asdasd",
@@ -33,7 +33,7 @@ users = User.create([
     { 
       name: "Ramon", 
       photo: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5jazwN6mEQZ0tuVNeWLC21f3m9G_N9Lxbiw&usqp=CAU",
-      bio: "A back-end developer who likes to go to the park at all times🦴🌳",
+      bio: "A full stack dev looking for new opportunities 👨‍🎤🌃🇲🇽",
       email: "ramon@gmail.com",
       role: 'user',
       password: "asdasd",
