@@ -1,10 +1,10 @@
 # Rubyworld ♦️🌎
 
->  A ruby on rails app that keeps track of all your recipes, ingredients, and inventory. Allows to save ingredients, keep track of what you have, create recipes, and generate a shopping list based on what you have and what you are missing from a recipe.
+>  A multi-user Ruby on Rails blog application with time-stamped entries for RoR devs. Allows to create, edit and delete users, posts, comments, likes. Uses devise for user authentication and Simple Mail Transfer Protocol (SMTP) method for email confirmation and user editing.
 
 ![screenshot](./app/assets/images/screenshot.png)
 
-Check the [live demo](https://rubyworld.fly.dev/)
+Check the [deployed version here](https://rubyworld.fly.dev/)
 
 ## Getting Started
 
