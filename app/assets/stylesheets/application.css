@@ -198,10 +198,12 @@
 
   .home-btn-container {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
   }
 
   .home-btn {
-    width: 68vw;
+    width: 83vw;
     margin: 0.25em;
   }
 
