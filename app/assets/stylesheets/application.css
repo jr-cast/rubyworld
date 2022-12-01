@@ -223,6 +223,7 @@
   
   .user-container {
     margin: 3em;
+    width: 85vw;
   }
 
   .no-comments {
